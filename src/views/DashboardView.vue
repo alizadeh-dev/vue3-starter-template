@@ -1,3 +1,5 @@
 <template>
-    <h1>{{ $t('Dashboard') }}</h1>
+    <div>dashboard</div>
 </template>
+
+<script setup></script>

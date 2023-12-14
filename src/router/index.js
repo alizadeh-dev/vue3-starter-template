@@ -12,15 +12,24 @@ const router = createRouter({
             path: '/',
             name: 'Panel',
             component: PanelView,
-            beforeEnter: [AuthenticateRoute],
+            // beforeEnter: [AuthenticateRoute],
             children: [
                 {
                     path: '',
                     name: 'Dashboard',
                     component: () => import('@/views/DashboardView.vue'),
-                    beforeEnter: [AuthorizeRoute],
+                    // beforeEnter: [AuthorizeRoute],
                     meta: {
                         permissions: ['dashboard']
+                    }
+                },
+                {
+                    path: '/list',
+                    name: 'List',
+                    component: () => import('@/views/ListView.vue'),
+                    // beforeEnter: [AuthorizeRoute],
+                    meta: {
+                        permissions: ['list']
                     }
                 }
             ]

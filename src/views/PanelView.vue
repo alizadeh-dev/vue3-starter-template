@@ -1,17 +1,29 @@
 <template>
-    <header>
-        <nav>
-            <RouterLink :to="{ name: 'Dashboard' }">
-                {{ $t('Dashboard') }}
-            </RouterLink>
-            |
-            <RouterLink :to="{ name: 'Login' }">
-                {{ $t('Login') }}
-            </RouterLink>
-        </nav>
-    </header>
+<VLayout>
+    <template #header>
+        <VHeader>
+            <template #start>logo</template>
+        </VHeader>
+    </template>
 
-    <main>
-        <RouterView />
-    </main>
+
+    <template #side-bar>
+        <div class="bg-secondary col-2 p-4">sidebar</div>
+    </template>
+
+    <template #default>
+        <router-view/>
+    </template>
+
+    <template #footer>
+        footer
+    </template>
+
+
+</VLayout>
 </template>
+
+<script setup>
+import VHeader from "@/components/layout/VHeader.vue";
+import VLayout from "@/components/layout/VLayout.vue";
+</script>

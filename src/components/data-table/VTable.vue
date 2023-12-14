@@ -5,6 +5,7 @@
     </table>
 
     <VPagination
+        v-if="$props.withPagination"
         :model-value="page"
         @update:model-value="updatePage"
         :total="items.length"
@@ -42,6 +43,10 @@ export default {
             default: 10
         },
         isLoading: {
+            type: Boolean,
+            default: false
+        },
+        withPagination: {
             type: Boolean,
             default: false
         }

@@ -84,7 +84,7 @@ import VColumn from "@/components/data-table/VColumn.vue";
 
 export default {
 
-    name: "FlightAnswerCancellation",
+    name: "ListView",
     components: {VColumn, VTable},
 
 
